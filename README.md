@@ -42,11 +42,11 @@ Sudoku-Solver/
 
 ## Learning Outcomes
 
-1.Improved understanding of HTML structure and CSS styling
-2.Practiced JavaScript variables, functions, conditions, and event handling
-3.Learned to implement the Backtracking Algorithm
-4.Practiced Sudoku validation and constraint checking
-5.Improved understanding of DOM manipulation
-6.Practiced recursive problem solving using JavaScript
-7.Improved understanding of user input validation and edge cases
-8.Practiced building an interactive and responsive web interface
+- Improved understanding of HTML structure and CSS styling
+- Practiced JavaScript variables, functions, conditions, and event handling
+- Learned to implement the Backtracking Algorithm
+- Practiced Sudoku validation and constraint checking
+- Improved understanding of DOM manipulation
+- Practiced recursive problem solving using JavaScript
+- Improved understanding of user input validation and edge cases
+- Practiced building an interactive and responsive web interface
