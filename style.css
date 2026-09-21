@@ -1,0 +1,302 @@
+/* =========================
+   BASIC RESET
+========================= */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100vh;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    /* Clean background - no purple gradient */
+    background: #e9eee9;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 30px;
+}
+
+
+/* =========================
+   MAIN CARD
+========================= */
+
+.solver-card {
+    width: 100%;
+    max-width: 680px;
+
+    background: #ffffff;
+
+    border-radius: 22px;
+
+    padding: 38px 45px 40px;
+
+    box-shadow: 0 12px 35px rgba(35, 45, 40, 0.12);
+
+    text-align: center;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.logo {
+    font-size: 34px;
+    font-weight: 700;
+
+    color: #202522;
+
+    margin-bottom: 8px;
+}
+
+.hero-text {
+    font-size: 16px;
+    color: #626b65;
+
+    margin-bottom: 28px;
+}
+
+
+/* =========================
+   SUDOKU GRID
+========================= */
+
+.sudoku-container {
+    display: flex;
+    justify-content: center;
+
+    margin: 0 auto 27px;
+}
+
+.sudoku-grid {
+    width: min(475px, 100%);
+    aspect-ratio: 1 / 1;
+
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
+
+    border: 3px solid #292d2a;
+
+    background: #292d2a;
+}
+
+
+/* Individual cells */
+
+.sudoku-cell {
+    width: 100%;
+    height: 100%;
+
+    border: none;
+
+    background: #ffffff;
+
+    text-align: center;
+
+    font-size: 22px;
+    font-weight: 500;
+
+    color: #222624;
+
+    outline: none;
+
+    border-right: 1px solid #b8bdb9;
+    border-bottom: 1px solid #b8bdb9;
+}
+
+
+/* Remove outside borders */
+
+.sudoku-cell:nth-child(9n) {
+    border-right: none;
+}
+
+.sudoku-cell:nth-child(n + 73) {
+    border-bottom: none;
+}
+
+
+/* =========================
+   3 × 3 BOX BORDERS
+========================= */
+
+/* Vertical thick lines */
+
+.sudoku-cell:nth-child(3n) {
+    border-right: 2.5px solid #292d2a;
+}
+
+.sudoku-cell:nth-child(9n) {
+    border-right: none;
+}
+
+
+/* Horizontal thick lines */
+
+.sudoku-cell:nth-child(n + 19):nth-child(-n + 27),
+.sudoku-cell:nth-child(n + 46):nth-child(-n + 54) {
+    border-bottom: 2.5px solid #292d2a;
+}
+
+
+/* =========================
+   GIVEN / INPUT NUMBERS
+========================= */
+
+.sudoku-cell.given {
+    background: #f1f3ef;
+
+    color: #202522;
+
+    font-weight: 700;
+}
+
+
+/* =========================
+   SOLVED NUMBERS
+========================= */
+
+.sudoku-cell.solved {
+    background: #e4f1ed;
+
+    color: #087f70;
+
+    font-weight: 700;
+}
+
+
+/* =========================
+   CELL FOCUS
+========================= */
+
+.sudoku-cell:not(.given):focus {
+    background: #edf7f4;
+
+    box-shadow: inset 0 0 0 2px #15907e;
+}
+
+
+/* =========================
+   MESSAGE
+========================= */
+
+.message {
+    min-height: 22px;
+
+    margin-bottom: 15px;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    color: #087f70;
+}
+
+.message.error {
+    color: #c44747;
+}
+
+
+/* =========================
+   BUTTONS
+========================= */
+
+.buttons {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 10px;
+
+    flex-wrap: wrap;
+}
+
+
+/* All buttons */
+
+button {
+    border: none;
+
+    font-family: inherit;
+
+    font-size: 14px;
+
+    padding: 13px 20px;
+
+    border-radius: 9px;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+}
+
+
+/* Load Example + Clear */
+
+.secondary-btn {
+    background: #eeeeec;
+
+    color: #242825;
+}
+
+.secondary-btn:hover {
+    background: #e2e3df;
+}
+
+
+/* Solve button */
+
+.primary-btn {
+    background: #667eea;
+    color: white;
+    font-weight: 600;
+}
+
+.primary-btn:hover {
+    background: #586ed6;
+    transform: translateY(-1px);
+}
+
+
+/* =========================
+   RESPONSIVE DESIGN
+========================= */
+
+@media (max-width: 600px) {
+
+    body {
+        padding: 15px;
+    }
+
+    .solver-card {
+        padding: 30px 18px 32px;
+
+        border-radius: 18px;
+    }
+
+    .logo {
+        font-size: 28px;
+    }
+
+    .hero-text {
+        font-size: 14px;
+
+        margin-bottom: 22px;
+    }
+
+    .sudoku-cell {
+        font-size: 18px;
+    }
+
+    button {
+        padding: 11px 15px;
+    }
+}
